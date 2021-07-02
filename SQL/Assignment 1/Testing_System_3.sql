@@ -100,7 +100,7 @@ select Code, Title, Duration, date(`CreateDate`) as 'Ngay Tao' from `Exam` where
 -- Question 9
 select * from `Group` order by CreateDate desc limit 5;
 -- Question 10
-select DepartmentID, COUNT(DepartmentID) AS `So nhan vien` from `Account` group by `DepartmentID` having `DepartmentID` = 2;
+select DepartmentID, count(DepartmentID) as `So nhan vien` from `Account` group by `DepartmentID` having `DepartmentID` = 2;
 -- Question 11
 select * from Account where FullName like 'D%o';
 -- Question 12
@@ -108,7 +108,7 @@ delete from `Exam` where CreateDate < '2019-12-20';
 -- Question 13
 delete from `Question` where `Content` LIKE 'câu hỏi%';
 -- Question 14
-update `Account`set `FullName` = 'Nguyễn Bá Lộc', `Email`    = 'loc.nguyenba@vti.com.vn' where `AccountID` = 5;
+update `Account` set `FullName` = 'Nguyễn Bá Lộc', `Email`    = 'loc.nguyenba@vti.com.vn' where `AccountID` = 5;
 -- Question 15
 update `GroupAccount` set `GroupID` = 4 where `AccountID` = 5;
 
