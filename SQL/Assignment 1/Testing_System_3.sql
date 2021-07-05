@@ -29,11 +29,11 @@ values
 ('Test 1');
 insert into Group(GroupName, CreatorID, CreateDate)
 values
-(Group6, 16, '2019-02-11'),
-(Group7, 17, '2019-02-12'),
-(Group8, 18, '2019-02-13'),
-(Group9, 19, '2019-02-14'),
-(Group10, 20, '2019-02-15');
+('Group6', 16, '2019-02-11'),
+('Group7', 17, '2019-02-12'),
+('Group8', 18, '2019-02-13'),
+('Group9', 19, '2019-02-14'),
+('Group10', 20, '2019-02-15');
 insert into GroupAccount(JoinDate)
 values
 ('2019-05-23'),
@@ -57,25 +57,25 @@ values
 ('Category10');
 insert into Question(Content, CategoryID, TypeID, CreatorID, CreateDate)
 values
-(Câu hỏi thứ sáu, 17, 22, '2019-03-23'),
-(Câu hỏi thứ bảy, 18, 23, '2019-07-29'),
-(Câu hỏi thứ tám, 19, 24, '2019-02-12'),
-(Câu hỏi thứ chín, 20, 25, '2019-05-1'),
-(Câu hỏi thứ mười,  21, 26, '2019-10-30');
+('Câu hỏi thứ sáu', 17, 22, '2019-03-23'),
+('Câu hỏi thứ bảy', 18, 23, '2019-07-29'),
+('Câu hỏi thứ tám', 19, 24, '2019-02-12'),
+('Câu hỏi thứ chín', 20, 25, '2019-05-1'),
+('Câu hỏi thứ mười',  21, 26, '2019-10-30');
 insert into Answer(Content, QuestionID, isCorrect)
 values
-(Câu trả lời thứ sáu, 6, 0),
-(Câu trả lời thứ bảy, 7, 1),
-(Câu trả lời thứ tám, 8, 0),
-(Câu trả lời thứ chín, 9, 0),
-(Câu trả lời thứ mười, 10, 1);
+('Câu trả lời thứ sáu', 6, 0),
+('Câu trả lời thứ bảy', 7, 1),
+('Câu trả lời thứ tám', 8, 0),
+('Câu trả lời thứ chín', 9, 0),
+('Câu trả lời thứ mười', 10, 1);
 insert into Exam(Code, Title, CategoryID, Duration, CreatorID, CreateDate)
 values
-(69342, Title6, 17, 3600, 16, '2019-08-18'),
-(34320, Title7, 18, 3600, 17, '2019-07-19'),
-(94013, Title8, 19, 3600, 18, '2019-07-20'),
-(52994, Title9, 20, 3600, 19, '2019-07-21'),
-(50319, Title10, 21, 3600, 20, '2019-07-22');
+(69342, 'Title6', 17, 3600, 16, '2019-08-18'),
+(34320, 'Title7', 18, 3600, 17, '2019-07-19'),
+(94013, 'Title8', 19, 3600, 18, '2019-07-20'),
+(52994, 'Title9', 20, 3600, 19, '2019-07-21'),
+(50319, 'Title10', 21, 3600, 20, '2019-07-22');
 insert into ExamQuestion(QuestionID)
 values
 (6),
@@ -86,7 +86,7 @@ values
 -- Question 2
 select * from Department;
 -- Question 3
-select DepartmentID from `Department` where DepartmentName = 'Sale'
+select DepartmentID, DepartmentName from `Department` where DepartmentName = 'Sale';
 -- Question 4
 select * from `Account` where character_length(Full_name) = (Select max(character_length(Full_name)) from `Account`);
 -- Question 5
@@ -102,7 +102,7 @@ select * from `Group` order by CreateDate desc limit 5;
 -- Question 10
 select DepartmentID, count(DepartmentID) as `So nhan vien` from `Account` group by `DepartmentID` having `DepartmentID` = 2;
 -- Question 11
-select * from Account where FullName like 'D%o';
+select * from Account where Full_name like 'D%o';
 -- Question 12
 delete from `Exam` where CreateDate < '2019-12-20';
 -- Question 13
